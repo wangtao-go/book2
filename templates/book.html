@@ -1,0 +1,59 @@
+{% extends 'publish.html' %}
+
+{% block main %}
+    <h1 class="page-header">我的书籍</h1>
+
+    <h2 class="sub-header">书籍</h2>
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <a href="/book_add/">新增</a>
+            <thead>
+            <tr>
+                <th>序号</th>
+                <th>id</th>
+                <th>书名</th>
+                <th>出版社</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for book in all_books %}
+                <tr>
+                    <td>
+                        {{ forloop.counter }}
+                    </td>
+                    <td>{{ book.pk }}</td>
+                    <td>{{ book.name }}</td>
+                    <td>{{ book.publisher.name }}</td>
+                    <td>
+                        <a class="btn btn-danger btn-sm" href="/book_del/?id={{ book.id }}">删除</a>
+                        <a class="btn btn-primary btn-sm" href="/book_edit/?id={{ book.pk }}">编辑</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+
+        </table>
+    </div>
+    {% load mytags %}
+    {% pagination 5 %}
+{% endblock %}
+
+{% block book %}
+    active
+{% endblock %}
+
+{% block pub %}
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+

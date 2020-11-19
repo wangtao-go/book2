@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>出版内容</title>
+    <link rel="stylesheet" href="/static/plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/plugins/bootstrap-3.3.7-dist/css/dsb.css">
+</head>
+
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">王涛的博客</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/publish/">出版社内容</a></li>
+                <li><a href="/book_pic/">陈晓旭图片库</a></li>
+                <li><a href="#">王涛的链接</a></li>
+                <li><a href="#">三毛语录</a></li>
+            </ul>
+            <form class="navbar-form navbar-right">
+                <input type="text" class="form-control" placeholder="Search...">
+            </form>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+                <li><a href="/publish/">出版社</a></li>
+                <li class="active"><a href="/book/">书籍</a></li>
+                <li><a href="#">作者</a></li>
+                <li><a href="/book_pic/">陈晓旭图片<span class="sr-only">(current)</span></a></li>
+            </ul>
+        </div>
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <div class="panel panel-primary">
+                <div class="panel-heading">出版社</div>
+                <div class="panel-body">
+                    <form class="form-horizontal" action="" method="post">
+                        <div class="form-group">
+
+                            <div class="col-sm-10">
+                                <input type="text" name="book_name" class="form-control"
+                                       value="{{ book_obj.name }}"><span>{{ error }}</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+
+                            <div class="col-sm-10">
+                                书籍： <select name="pub_id" id="">
+                                {#    <select name="" id=""></select>和option连用表示下拉框#}
+                                {% for publisher in all_publishers %}
+                                    {% if book_obj.publisher == publisher %}
+                                        <option selected value="{{ publisher.pk }}">{{ publisher.name }}</option>
+                                    {% else %}
+                                        <option value="{{ publisher.pk }}">{{ publisher.name }}</option>
+                                    {% endif %}
+                                {% endfor %}
+                            </select>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-default">提交</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+

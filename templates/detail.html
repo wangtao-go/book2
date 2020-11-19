@@ -1,0 +1,82 @@
+{#{% extends 'base2.html' %}#}
+{#{% load static %}#}
+{#{% load video_tag %}#}
+{#{% block css %}#}
+{#<link rel="stylesheet" href="{% static 'css/dropload.css' %}">#}
+{#{% endblock css %}#}
+{#{% block content %}#}
+{##}
+{##}
+{#<div class="ui unstackable two column grid">#}
+{#    <div class=" ten wide column">#}
+{#        <video class="video" autoplay="autoplay" controls="controls" controlslist="nodownload"#}
+{#               disablePictureInPicture>#}
+{#            <source src="/media/balloon.mp4" type="video/mp4">#}
+{#        </video>#}
+{#    </div>#}
+{#</div>#}
+{##}
+
+
+
+
+
+{#{% endblock content %}#}
+{##}
+{#{% block javascript %}#}
+{##}
+{#<script>#}
+{##}
+{#var video_id = {{ video.pk }}#}
+{#</script>#}
+{##}
+{#<script src="{% static 'js/dropload.js' %}"></script>#}
+{#<script src="{% static 'js/load_comments.js' %}"></script>#}
+{#<script src="{% static 'js/detail.js' %}"></script>#}
+{#{% endblock javascript %}#}
+{# #}
+
+
+
+
+
+
+
+
+
+
+
+{#{% extends 'base/base.html' %}#}
+{#{% load static %}#}
+{#{% load video_tag %}#}
+{#{% block css %}#}
+{#<link rel="stylesheet" href="{% static 'css/dropload.css' %}">#}
+{#{% endblock css %}#}
+
+{#{% block content %}#}
+<div class="ui unstackable two column grid">
+    <div class=" ten wide column">
+        <video class="video" autoplay="autoplay" controls="controls" controlslist="nodownload"
+               disablePictureInPicture>
+            <source src="/media/balloon.mp4" type="video/mp4">
+        </video>
+    </div>
+</div>
+{#{% endblock content %}#}
+{##}
+{#{% block javascript %}#}
+{##}
+{#<script>#}
+{#var comments_url = "{% url 'comment:get_comments' %}"#}
+{#var video_id = {{ video.id }}#}
+{#</script>#}
+{##}
+{#<script src="{% static 'js/dropload.js' %}"></script>#}
+{#<script src="{% static 'js/load_comments.js' %}"></script>#}
+{#<script src="{% static 'js/detail.js' %}"></script>#}
+{#{% endblock javascript %}#}
+{# #}
+
+
+
+
